@@ -221,6 +221,8 @@ class FlatJsonParamsTest < ActionDispatch::IntegrationTest
         post signup_path, params: { email_address: email }, as: :json
       end
     end
+
+    assert_response :created
   end
 
   test "complete signup with flat JSON" do
@@ -242,6 +244,7 @@ class FlatJsonParamsTest < ActionDispatch::IntegrationTest
 
     post users_joins_path, params: { name: "Flat Join" }, as: :json
 
+    assert_response :no_content
     assert_equal "Flat Join", users(:david).reload.name
   end
 
