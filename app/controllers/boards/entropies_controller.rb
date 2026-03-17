@@ -10,7 +10,7 @@ class Boards::EntropiesController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream
-      format.json { head :no_content }
+      format.json { render "boards/show", status: :ok }
     end
   rescue ActiveRecord::RecordInvalid
     head :unprocessable_entity

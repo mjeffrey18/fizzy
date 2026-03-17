@@ -4,11 +4,12 @@ class Account::EntropiesController < ApplicationController
   before_action :ensure_admin
 
   def update
-    Current.account.entropy.update!(entropy_params)
+    @account = Current.account
+    @account.entropy.update!(entropy_params)
 
     respond_to do |format|
       format.html { redirect_to account_settings_path, notice: "Account updated" }
-      format.json { head :no_content }
+      format.json { render "account/settings/show", status: :ok }
     end
   rescue ActiveRecord::RecordInvalid
     head :unprocessable_entity
