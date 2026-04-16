@@ -25,4 +25,8 @@
     <%= link_to "Close editor and discard changes", @card,
           data: { form_target: "cancel", bridge__form_target: "cancel", bridge_title: "Cancel" }, hidden: true %>
   <% end %>
+
+  <% if voice_transcription_available? %>
+    <%= render "voice_transcriptions/recorder" %>
+  <% end %>
 <% end %>

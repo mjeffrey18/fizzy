@@ -126,6 +126,7 @@ Rails.application.routes.draw do
   end
 
   resource :search
+  resources :voice_transcriptions, only: :create
   namespace :searches do
     resources :queries
   end

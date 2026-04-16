@@ -1,0 +1,114 @@
+@layer components {
+  .voice-recorder {
+    position: relative;
+  }
+
+  .voice-recorder__trigger {
+    appearance: none;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.25em;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+  }
+
+  .voice-recorder__trigger:hover {
+    color: var(--text-primary);
+  }
+
+  .voice-recorder__overlay {
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius);
+    padding: 1em 1.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+    margin-block-start: 0.5em;
+  }
+
+  .voice-recorder__timer {
+    font-family: var(--font-mono, monospace);
+    font-size: 1.5em;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+  }
+
+  .voice-recorder__status {
+    font-size: 0.875em;
+    color: var(--text-secondary);
+  }
+
+  .voice-recorder__error {
+    color: var(--color-negative, #e53e3e);
+  }
+
+  .voice-recorder__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .voice-recorder__controls button {
+    appearance: none;
+    background: none;
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius);
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.375em 0.625em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375em;
+    font-size: 0.875em;
+    transition: background 0.15s ease;
+  }
+
+  .voice-recorder__controls button:hover {
+    background: var(--surface-tertiary);
+  }
+
+  .voice-recorder__controls button.voice-recorder__submit {
+    background: var(--color-accent, #3b82f6);
+    border-color: var(--color-accent, #3b82f6);
+    color: white;
+  }
+
+  .voice-recorder__controls button.voice-recorder__submit:hover {
+    opacity: 0.9;
+  }
+
+  .voice-recorder__recording-indicator {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: var(--color-negative, #e53e3e);
+    animation: voice-recorder-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes voice-recorder-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .voice-recorder__spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid var(--border-primary);
+    border-top-color: var(--text-primary);
+    border-radius: 50%;
+    animation: voice-recorder-spin 0.6s linear infinite;
+  }
+
+  @keyframes voice-recorder-spin {
+    to { transform: rotate(360deg); }
+  }
+}

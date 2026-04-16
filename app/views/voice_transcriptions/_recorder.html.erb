@@ -1,0 +1,66 @@
+<div class="voice-recorder"
+     data-controller="voice-recorder"
+     data-voice-recorder-transcription-url-value="<%= voice_transcriptions_path %>"
+     data-voice-recorder-direct-upload-url-value="<%= rails_direct_uploads_path %>"
+     data-action="keydown.shift+alt+v@window->voice-recorder#toggleRecording">
+
+  <button type="button"
+          class="voice-recorder__trigger"
+          data-voice-recorder-target="recordButton"
+          data-action="voice-recorder#start"
+          title="Record voice note (Shift+Alt+V)">
+    <%= icon_tag "microphone" %>
+    <span class="for-screen-reader">Record voice note</span>
+  </button>
+
+  <div class="voice-recorder__overlay" data-voice-recorder-target="overlay" hidden>
+    <span class="voice-recorder__timer" data-voice-recorder-target="timer">00:00</span>
+    <span class="voice-recorder__status" data-voice-recorder-target="statusText"></span>
+
+    <%# Recording controls: pause/resume, stop, discard %>
+    <div class="voice-recorder__controls" data-voice-recorder-target="recordingControls" hidden>
+      <span class="voice-recorder__recording-indicator"></span>
+      <button type="button"
+              data-voice-recorder-pause-resume
+              data-action="voice-recorder#pause"
+              title="Pause">
+        <%= icon_tag "pause-circle" %>
+        <span>Pause</span>
+      </button>
+      <button type="button" data-action="voice-recorder#stop" title="Stop recording">
+        <%= icon_tag "stop-circle" %>
+        <span>Done</span>
+      </button>
+      <button type="button" data-action="voice-recorder#discard" title="Discard recording">
+        <%= icon_tag "trash" %>
+        <span class="for-screen-reader">Discard</span>
+      </button>
+    </div>
+
+    <%# Playback controls: play/stop, discard, transcribe %>
+    <div class="voice-recorder__controls" data-voice-recorder-target="playbackControls" hidden>
+      <button type="button"
+              data-voice-recorder-play-stop
+              data-action="voice-recorder#play"
+              title="Play">
+        <%= icon_tag "play-circle" %>
+        <span>Play</span>
+      </button>
+      <button type="button" data-action="voice-recorder#discard" title="Discard recording">
+        <%= icon_tag "trash" %>
+        <span class="for-screen-reader">Discard</span>
+      </button>
+      <button type="button"
+              class="voice-recorder__submit"
+              data-action="voice-recorder#submit"
+              title="Transcribe and insert">
+        <span>Transcribe</span>
+      </button>
+    </div>
+
+    <%# Processing state: spinner + status %>
+    <div class="voice-recorder__controls" data-voice-recorder-target="processingControls" hidden>
+      <span class="voice-recorder__spinner"></span>
+    </div>
+  </div>
+</div>

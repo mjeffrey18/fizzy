@@ -26,4 +26,8 @@
       <%= general_prompts(card.board) %>
     <% end %>
   <% end %>
+
+  <% if voice_transcription_available? %>
+    <%= render "voice_transcriptions/recorder" %>
+  <% end %>
 <% end %>

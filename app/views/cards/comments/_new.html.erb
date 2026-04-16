@@ -20,6 +20,10 @@
               data: { form_target: "submit" }, disabled: true do %>
             <span>Post</span>
           <% end %>
+
+          <% if voice_transcription_available? %>
+            <%= render "voice_transcriptions/recorder" %>
+          <% end %>
         </span>
       <% end %>
     </div>

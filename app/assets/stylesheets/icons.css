@@ -91,6 +91,7 @@
   .icon--logout { --svg: url("logout.svg "); }
   .icon--marker { --svg: url("marker.svg "); }
   .icon--maximize { --svg: url("maximize.svg "); }
+  .icon--microphone { --svg: url("microphone.svg "); }
   .icon--menu { --svg: url("menu.svg "); }
   .icon--menu-dots-horizontal { --svg: url("menu-dots-horizontal.svg "); }
   .icon--menu-dots-vertical { --svg: url("menu-dots-vertical.svg "); }
@@ -103,6 +104,7 @@
   .icon--notification-bell-reverse-access-only { --svg: url("bell-off.svg "); }
   .icon--notification-bell-reverse-watching { --svg: url("bell.svg "); }
   .icon--password { --svg: url("password.svg "); }
+  .icon--pause-circle { --svg: url("pause-circle.svg "); }
   .icon--pencil { --svg: url("pencil.svg "); }
   .icon--person { --svg: url("person.svg "); }
   .icon--person-add { --svg: url("person-add.svg "); }
@@ -111,6 +113,7 @@
   .icon--picture-remove { --svg: url("picture-remove.svg "); }
   .icon--picture-zoom { --svg: url("picture-zoom.svg "); }
   .icon--pinned { --svg: url("pinned.svg "); }
+  .icon--play-circle { --svg: url("play-circle.svg "); }
   .icon--qr-code { --svg: url("qr-code.svg "); }
   .icon--reaction { --svg: url("reaction.svg "); }
   .icon--refresh { --svg: url("refresh.svg "); }
@@ -121,6 +124,7 @@
   .icon--settings { --svg: url("settings.svg "); }
   .icon--share { --svg: url("share.svg "); }
   .icon--sliders { --svg: url("sliders.svg "); }
+  .icon--stop-circle { --svg: url("stop-circle.svg "); }
   .icon--sun { --svg: url("sun.svg "); }
   .icon--switch { --svg: url("switch.svg "); }
   .icon--tag { --svg: url("tag.svg "); }
