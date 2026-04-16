@@ -1,0 +1,23 @@
+services:
+  web:
+    image: ghcr.io/basecamp/fizzy:main
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      # - "443:443"
+    environment:
+      - SECRET_KEY_BASE=3cd6b50d959113efd1a6da891f86c520bf1cd9d0630ce4d203975f4ef2d07f847b754ea00b57df788ec1b7718865829f8ad3a292d735a04b721bb7c76279ae2e
+      - DISABLE_SSL=true
+      # - TLS_DOMAIN=fizzy.example.com
+      # - BASE_URL=https://fizzy.example.com
+      # - MAILER_FROM_ADDRESS=fizzy@example.com
+      # - SMTP_ADDRESS=mail.example.com
+      # - SMTP_USERNAME=user
+      # - SMTP_PASSWORD=pass
+      # - VAPID_PRIVATE_KEY=myvapidprivatekey
+      # - VAPID_PUBLIC_KEY=myvapidpublickey
+    volumes:
+      - fizzy:/rails/storage
+
+volumes:
+  fizzy:
